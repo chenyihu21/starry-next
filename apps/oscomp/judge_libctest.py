@@ -9,6 +9,9 @@ Pass!
 ========== START entry-static.exe qsort ==========
 Pass!
 ========== END entry-static.exe qsort ==========
+========== START entry-static.exe rlimit_open_files ==========
+Pass!
+========== END entry-static.exe rlimit_open_files ==========
 """
 
 bypass_testkey = [

@@ -1,2 +1,2 @@
-/musl/runtest.exe -w entry-static.exe argv
-/musl/runtest.exe -w entry-static.exe qsort
+/musl/runtest.exe -w entry-static.exe fflush_exit
+/musl/runtest.exe -w entry-static.exe rlimit_open_files

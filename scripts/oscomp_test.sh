@@ -72,6 +72,7 @@ lua_testlist=("/$LIBC/busybox sh /$LIBC/lua_testcode.sh")
 libctest_testlist=(
     "/$LIBC/runtest.exe -w entry-static.exe argv"
     "/$LIBC/runtest.exe -w entry-static.exe qsort"
+    "/$LIBC/runtest.exe -w entry-static.exe rlimit_open_files"
     # "/$LIBC/runtest.exe -w entry-static.exe memmem_oob_read"
     # "/$LIBC/runtest.exe -w entry-static.exe string_strchr"
     # "/$LIBC/runtest.exe -w entry-static.exe ungetc"

@@ -56,6 +56,8 @@ pub struct TaskExt {
     pub heap_top: AtomicU64,
     /// The user stack size
     pub stack_size: AtomicU64,
+    /// The limit of fd
+    pub fd_limit: AtomicU64,
 }
 
 impl TaskExt {
@@ -77,6 +79,7 @@ impl TaskExt {
             heap_bottom: AtomicU64::new(heap_bottom),
             heap_top: AtomicU64::new(heap_bottom),
             stack_size: AtomicU64::new(axconfig::plat::USER_STACK_SIZE as u64),
+            fd_limit: AtomicU64::new(1024 as u64),
         }
     }
 
@@ -228,6 +231,14 @@ impl TaskExt {
 
     pub fn set_stack_size(&self, size: u64) {
         self.stack_size.store(size, Ordering::Release)
+    }
+
+    pub fn get_fd_limit(&self) -> u64 {
+        self.fd_limit.load(Ordering::Acquire)
+    }
+
+    pub fn set_fd_limit(&self, limit: u64) {
+        self.fd_limit.store(limit, Ordering::Release)
     }
 }
 
